@@ -1,0 +1,8 @@
+/design
+/README-template.md
+style-guide.md
+live.js
+*.sketch
+*.xd
+*.fig
+.DS_Store
