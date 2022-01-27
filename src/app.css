@@ -22,6 +22,9 @@ body {
   align-items: center;
   font-family: "Barlow Semi", sans-serif;
 }
+body .container {
+  text-align: center;
+}
 @media (max-width: 900px) {
   body {
     align-items: stretch;
@@ -42,9 +45,6 @@ body .container .perform {
     width: 90%;
     margin: 2rem auto;
   }
-}
-body .container .perform h1 {
-  color: #fff;
 }
 body .container .perform .score {
   justify-self: end;
@@ -98,6 +98,8 @@ body .container .select .border {
   display: inline-block;
   cursor: pointer;
   box-shadow: 0 -5px 0 0 rgba(0, 0, 0, 0.2) inset;
+  animation-name: animate;
+  animation-duration: 0.4s;
 }
 @media (max-width: 900px) {
   body .container .select .border {
@@ -230,22 +232,6 @@ body .container .select .box {
     column-gap: 70px;
   }
 }
-body .btn {
-  background-color: transparent;
-  border: 1px #fff solid;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
-  color: #fff;
-  position: absolute;
-  bottom: 2.5rem;
-  right: 2.5rem;
-  font-family: "Barlow Bold", sans-serif;
-}
-body .btn:hover {
-  background-color: #fff;
-  color: #3b4363;
-  cursor: pointer;
-}
 body .attribution {
   position: fixed;
   bottom: 0;
@@ -270,7 +256,7 @@ body .attribution a {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 100%;
   width: 132px;
-  height: 132px;
+  height: 140px;
   margin: 0 7rem;
   transform: scale(2.4);
 }
@@ -279,6 +265,97 @@ body .attribution a {
     padding: 60px;
     transform: scale(1);
     margin: 0 1rem;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px #fff solid;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  right: 2.5rem;
+  font-family: "Barlow Bold", sans-serif;
+  transition-property: background color;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  background-color: #fff;
+  color: #3b4363;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .btn {
+    position: static;
+    text-align: center;
+    margin: 2rem 0;
+  }
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: animate;
+  animation-duration: 0.4s;
+}
+.modal .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  display: flex;
+  background-color: #fff;
+  border-radius: 1rem;
+  flex-wrap: wrap;
+  width: 30%;
+  justify-content: space-between;
+}
+@media (max-width: 900px) {
+  .modal .modal-content {
+    padding: 3rem 2rem;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  }
+}
+.modal .modal-content h1 {
+  font-size: 2.5rem;
+  color: #3b4363;
+  font-family: "Barlow Bold", sans-serif;
+}
+.modal .modal-content .da-rules {
+  object-fit: contain;
+  width: 100%;
+  padding: 2rem;
+}
+.modal .modal-content .close {
+  cursor: pointer;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .modal .modal-content .close {
+    order: 2;
+  }
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

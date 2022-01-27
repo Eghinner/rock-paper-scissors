@@ -1,26 +1,21 @@
 const select = document.querySelector('#select')
 const box = document.querySelector('#box')
-const rules = document.querySelector('#rules')
 const score = document.querySelector('#score')
 
-
 const nodes_select = document.querySelectorAll('#select div .border')
-
 
 function getRandomNode() {
 	return Math.floor(Math.random() * nodes_select.length);
 }
 
-let scoreValue = localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')) : 0;
-localStorage.setItem('score', JSON.stringify(scoreValue));
-// let scoreValue = 0
+let scoreValue = localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')) : 0
+localStorage.setItem('score', JSON.stringify(scoreValue))
 score.textContent = scoreValue
 let ownOption = ''
 let computerOption = ''
 
 const results = document.createElement('div');
 results.id = 'results_box'
-results.classList.toggle('wrap')
 
 const whoWin = document.createElement('div')
 const h1 = document.createElement('h1')
@@ -33,12 +28,6 @@ const btn_again = document.createElement('button')
 btn_again.id = 'btn-again'
 btn_again.appendChild(newBtn)
 whoWin.appendChild(btn_again)
-
-function soloTexto() {
-
-}
-
-
 
 nodes_select.forEach(e => {
 	e.addEventListener('click', () => {
@@ -55,7 +44,6 @@ nodes_select.forEach(e => {
 		textBox2.appendChild(text2)
 		textBox2.classList.add('textBox')
 
-		results.classList.toggle('wrap')
 		const nodeRandom = nodes_select[getRandomNode()]
 
 		ownOption = e.id
@@ -68,7 +56,6 @@ nodes_select.forEach(e => {
 
 		textBox1.appendChild(clone)
 		textBox2.appendChild(cloneCpu)
-
 
 		select.replaceChildren(results)
 		results.appendChild(textBox1)
@@ -102,12 +89,9 @@ nodes_select.forEach(e => {
 				h1.textContent = 'YOU WIN'
 				scoreValue += 1
 				localStorage.setItem('score', JSON.stringify(scoreValue));
-
 				score.textContent = scoreValue
 				clone.classList.add('shadows-victory')
 			}
-			// results.classList.toggle('wrap')
-			// results.appendChild(whoWin)
 			h2.replaceWith(whoWin);
 		}, 4000);
 	})
@@ -119,7 +103,25 @@ function deleteChild() {
 
 
 btn_again.addEventListener('click', () => {
-	console.log(results)
 	deleteChild()
 	select.replaceChildren(box)
+})
+
+const modal = document.getElementById("myModal");
+
+const rules = document.querySelector('#rules')
+const close = document.querySelector('.close')
+
+rules.addEventListener('click', function() {
+  modal.style.display = "block";
+})
+
+close.addEventListener('click', function() {
+  modal.style.display = "none";
+})
+
+window.addEventListener('click', function (event) {
+	if (event.target == modal) {
+	  modal.style.display = "none";
+	}
 })
