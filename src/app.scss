@@ -17,22 +17,31 @@ $font: 'Barlow Semi Condensed', sans-serif;
 }
 body {
 	min-height: 100vh;
-	background: radial-gradient($radial);
+	background: radial-gradient($radial) center center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-family: $font;
+
+	@media (max-width: 900px) {
+		align-items: stretch;
+	}
 
 	.container {
 		.perform {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr;
-			border: 2px $outline solid;
+			border: 3px $outline solid;
 			border-radius: .5rem;
 			padding: 1rem;
-			width: 500px;
+			width: 650px;
 			text-transform: uppercase;
+
+			@media (max-width: 900px) {
+				width: 90%;
+				margin: 2rem auto;
+			}
 
 			h1 {
 				color: #fff;
@@ -40,6 +49,7 @@ body {
 
 			.score {
 				justify-self: end;
+				font-weight: bold;
 				padding: .5rem 2rem;
 				background-color: #fff;
 				border-radius: .5rem;
@@ -50,6 +60,7 @@ body {
 				align-items: center;
 
 				p{
+					letter-spacing: 2px;
 					font-size: 1.2rem;
 				}
 				h1 {
@@ -61,15 +72,21 @@ body {
 		}
 
 		.select {
+			display: flex;
 			margin: auto;
 			width: 490px;
+			// width: 90%;
 			height: 472px;
-			border: 1px #fff solid;
 			border-radius: .5rem;
+			justify-content: center;
+
+			@media (max-width: 900px) {
+				width: 90%;
+				height: 350px;
+			}
 
 			div {
 				display: flex;
-				padding: 2rem;
 
 				.paper {
 					background: linear-gradient($paper);
@@ -89,6 +106,9 @@ body {
 					cursor: pointer;
 					box-shadow: 0 -5px 0 0 hsl(0,0,0,0.2) inset;
 
+					@media (max-width: 900px) {
+						margin: 0;
+					}
 
 					img {
 						box-shadow: 0 5px 0 0 hsl(0,0,0,0.2) inset;
@@ -100,13 +120,97 @@ body {
 
 			}
 
+			// .wrap {
+			// 	flex-wrap: wrap !important;
+			// }
+
 			#results_box {
 				flex-wrap: nowrap;
-				width: 550px;
-				justify-content: space-between;
+				justify-content: center;
+				align-items: center;
+
+				@media (max-width: 900px) {
+					flex-wrap: wrap;
+				}
+				.shadows-victory {
+					&:before {
+						transform: translate(-50%, -50%);
+						left: 50%;
+						top: 50%;
+						width: 100%;
+						height: 100%;
+						border-radius: 100%;
+						position: absolute;
+						content: "";
+						border: 20px rgba(0, 0, 0, 0.2) solid;
+						@media (max-width: 900px) {
+							border-width: 15px;
+						}
+					}
+					&:after {
+						transform: translate(-50%, -50%);
+						left: 50%;
+						top: 50%;
+						width: 100%;
+						height: 100%;
+						border-radius: 100%;
+						position: absolute;
+						content: "";
+						border: 40px rgba(0, 0, 0, 0.2) solid;
+						@media (max-width: 900px) {
+							border-width: 30px;
+						}
+					}
+				}
+				.border {
+					align-items: center;
+					justify-content: center;
+					transform: scale(2.4);
+					margin: 0 7rem;
+
+					@media (max-width: 900px) {
+						transform: scale(1);
+						margin: 0 1rem;
+
+					}
+				}
 
 				#outResoult{
-					display: block;
+					// margin: 6rem;
+					// margin: 4rem;
+					width: 260px;
+					flex-direction: column;
+					text-align: center;
+
+					@media (max-width: 900px){
+						order: 3;
+						margin: 1rem;
+						width: auto;
+					}
+
+					h1 {
+						margin: 1rem 0;
+						color: #fff;
+						font-weight: 700;
+						font-size: 3.7rem;
+					}
+					#btn-again {
+						margin: 1rem 0;
+						width: 100%;
+						border: none;
+						background-color: #fff;
+						color: $dark;
+						font-size: 1.2rem;
+						padding: 1rem 3.5rem;
+						border-radius: .5rem;
+						font-weight: bold;
+						z-index: 99999;
+
+						&:hover {
+							cursor: pointer;
+							color: orange;
+						}
+					}
 				}
 			}
 
@@ -114,9 +218,13 @@ body {
 				flex-wrap: wrap;
 				justify-content: center;
 				align-items: center;
-				column-gap: 40px;
-				row-gap: 40px;
+				column-gap: 120px;
+				row-gap: 80px;
 				background: url('../images/bg-triangle.svg') no-repeat center center;
+
+				@media (max-width: 900px) {
+					column-gap: 70px;
+				}
 			}
 		}
 	}
@@ -143,6 +251,9 @@ body {
 		bottom: 0;
 		width: 100%;
 		text-align: center;
+		@media (max-width: 900px) {
+			font-size: .8rem;
+		}
 
 		a{
 			color: grey;

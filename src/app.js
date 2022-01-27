@@ -18,6 +18,7 @@ let computerOption = ''
 
 const results = document.createElement('div');
 results.id = 'results_box'
+results.classList.toggle('wrap')
 
 const whoWin = document.createElement('div')
 const h1 = document.createElement('h1')
@@ -27,52 +28,51 @@ whoWin.id = 'outResoult'
 
 let newBtn = document.createTextNode('Play Again')
 const btn_again = document.createElement('button')
+btn_again.id = 'btn-again'
 btn_again.appendChild(newBtn)
 whoWin.appendChild(btn_again)
 
 
 nodes_select.forEach(e => {
 	e.addEventListener('click', () => {
+		results.classList.toggle('wrap')
 		const nodeRandom = nodes_select[getRandomNode()]
+
 		ownOption = e.id
 		computerOption = nodeRandom.id
+
+		let cloneCpu = nodeRandom.cloneNode(true)
+		let clone = e.cloneNode(true)
+		clone.disabled = true
+		cloneCpu.disabled = true
+
 		if (ownOption === computerOption) {
-			let newText = document.createTextNode('DEAD HAT')
-			h1.appendChild(newText)
-			// aquiDice = 'Match'
+			h1.textContent = 'DEAD HAT'
 		} else if ((ownOption === 'paper' && computerOption === 'scissors') ||
 			(ownOption === 'scissors' && computerOption === 'rock') ||
 			(ownOption === 'rock' && computerOption === 'paper')
 			) {
-			let newText = document.createTextNode('YOU LOSE')
-			h1.appendChild(newText)
+			h1.textContent = 'YOU LOSE'
+			cloneCpu.classList.add('shadows-victory')
 		} else {
+			h1.textContent = 'YOU WIN'
 			scoreValue += 1
 			score.textContent = scoreValue
-			let newText = document.createTextNode('YOU WIN')
-			h1.appendChild(newText)
+			clone.classList.add('shadows-victory')
 		}
-		const clone = e.cloneNode(true)
-		clone.disabled = true
-		const cloneCpu = nodeRandom.cloneNode(true)
-		cloneCpu.disabled = true
+
 		select.replaceChildren(results)
 		results.appendChild(clone)
 		results.appendChild(cloneCpu).style.order = '2'
-		results.appendChild(whoWin)
-        // console.log(ownOption)
-        // console.log(computerOption)
 
-        // execute()
+		setTimeout(function() {
+			results.classList.toggle('wrap')
+			results.appendChild(whoWin)
+		}, 1000);
     })
 })
 
 function deleteChild() {
-        // var child = results.lastElementChild;
-        // while (child) {
-        // 	results.removeChild(child);
-        // 	child = results.lastElementChild;
-        // }
         results.innerHTML = ""
     }
 
