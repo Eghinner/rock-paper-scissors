@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>PP&T</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <!-- <script src="./live.js" defer></script> -->
-  <link rel="stylesheet" href="./src/app.css">
-  <script src="./src/app.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP&T</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!-- <script src="./live.js" defer></script> -->
+    <link rel="stylesheet" href="./src/app.css">
+    <script src="./src/app.js" defer></script>
 </head>
+
 <body>
-  <div class="container">
-    <div class="perform">
-      <div class="game">
-        <h1>Rock</h1>
-        <h1>Paper</h1>
-        <h1>Scissors</h1>
-      </div>
-      <div class="score">
-        <p>Score</p>
-        <h1 id="score">29</h1>
+    <div class="container">
+        <div class="perform">
+            <img src="images/logo.svg" alt="">
+            <div class="score">
+                <p>Score</p>
+                <h1 id="score">29</h1>
+            </div>
+        </div>
+        <div id="select" class="select">
+            <div id="box" class="box">
+                <div id="paper" class="border paper">
+                    <img width="100px" height="100px" src="images/icon-paper.svg" alt="paper">
+                </div>
+                <div id="scissors" class="border scissors">
+                    <img width="100px" height="100px" src="images/icon-scissors.svg" alt="scissors">
+                </div>
+                <div id="rock" class="border rock">
+                    <img width="100px" height="100px" src="images/icon-rock.svg" alt="rock">
+                </div>
+            </div>
+        </div>
+
+
+        <button id="rules" class="btn">Rules</button>
+    </div>
+
+
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/Eghinner">Eghinner Hernandez</a>.
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <h1>RULES</h1>
+        <img class="close" src="images/icon-close.svg" alt="close">
+        <img class="da-rules" src="images/image-rules.svg" alt="da-rules">
       </div>
     </div>
-    <div id="select" class="select">
-      <div id="box" class="box">
-        <div id="paper" class="border paper">
-          <img width="100px" height="100px" src="images/icon-paper.svg" alt="paper">
-        </div>
-        <div id="scissors" class="border scissors">
-          <img width="100px" height="100px" src="images/icon-scissors.svg" alt="scissors">
-        </div>
-        <div id="rock" class="border rock">
-          <img width="100px" height="100px" src="images/icon-rock.svg" alt="rock">
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <!-- <button id="rules" class="btn">Rules</button> -->
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/Eghinner">Eghinner Hernandez</a>.
-  </div>
 </body>
+
 </html>
