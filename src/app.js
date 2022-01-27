@@ -32,23 +32,27 @@ btn_again.id = 'btn-again'
 btn_again.appendChild(newBtn)
 whoWin.appendChild(btn_again)
 
-const textBox1 = document.createElement('div')
-textBox1.id = 'textBox1'
-const text1 = document.createElement('h3')
-text1.textContent = 'YOU PICKED'
-textBox1.appendChild(text1)
-textBox1.classList.add('textBox')
+function soloTexto() {
 
-const textBox2 = document.createElement('div')
-textBox2.id = 'textBox2'
-const text2 = document.createElement('h3')
-text2.textContent = 'THE HOUSE PICKED'
-textBox2.appendChild(text2)
-textBox2.classList.add('textBox')
+}
+
 
 
 nodes_select.forEach(e => {
 	e.addEventListener('click', () => {
+
+		const textBox1 = document.createElement('div')
+		const text1 = document.createElement('h3')
+		text1.textContent = 'YOU PICKED'
+		textBox1.appendChild(text1)
+		textBox1.classList.add('textBox')
+
+		const textBox2 = document.createElement('div')
+		const text2 = document.createElement('h3')
+		text2.textContent = 'THE HOUSE PICKED'
+		textBox2.appendChild(text2)
+		textBox2.classList.add('textBox')
+
 		results.classList.toggle('wrap')
 		const nodeRandom = nodes_select[getRandomNode()]
 
@@ -86,30 +90,16 @@ nodes_select.forEach(e => {
 			results.classList.toggle('wrap')
 			results.appendChild(whoWin)
 		}, 1000);
-    })
+	})
 })
 
 function deleteChild() {
-        results.innerHTML = ""
-    }
+	results.innerHTML = ""
+}
 
 
-    btn_again.addEventListener('click', () => {
-    	select.replaceChildren(box)
-    	deleteChild()
-    })
-
-
-
-    function execute() {
-    	if (ownOption === computerOption) {
-    		aquiDice = 'Match'
-    	} else if ((ownOption === 'paper' && computerOption === 'scissors') ||
-    		(ownOption === 'scissors' && computerOption === 'rock') ||
-    		(ownOption === 'rock' && computerOption === 'paper')
-    		) {
-    		aquiDice = 'Match'
-    	} else {
-    		aquiDice = 'Match'
-    	}
-    }
+btn_again.addEventListener('click', () => {
+	console.log(results)
+	deleteChild()
+	select.replaceChildren(box)
+})
