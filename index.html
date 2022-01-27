@@ -5,21 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <script src="./live.js" defer></script>
-  <link rel="stylesheet" href="./app.css">
+  <script src="./src/app.js" defer></script>
+  <link rel="stylesheet" href="./src/app.css">
   <title>PP&T</title>
 </head>
 <body>
+  <div class="container">
+    <div class="perform">
+      <div class="game">
+        <h1>Rock</h1>
+        <h1>Paper</h1>
+        <h1>Scissors</h1>
+      </div>
+      <div class="score">
+        <p>Score</p>
+        <h1 id="score">29</h1>
+      </div>
+    </div>
+    <div id="select" class="select">
+      <div id="box" class="box">
+        <div id="paper" class="border paper">
+          <img width="100px" height="100px" src="images/icon-paper.svg" alt="paper">
+        </div>
+        <div id="scissors" class="border scissors">
+          <img width="100px" height="100px" src="images/icon-scissors.svg" alt="scissors">
+        </div>
+        <div id="rock" class="border rock">
+          <img width="100px" height="100px" src="images/icon-rock.svg" alt="rock">
+        </div>
+      </div>
 
-    Score
-    Rules
+    </div>
+  </div>
+  <button id="rules" class="btn">Rules</button>
 
-    You Picked
-    <!-- The House Picked -->
 
-    You Win
-    <!-- You Lose -->
-
-    <!-- Play Again -->
+  <!-- You Picked -->
+  <!-- The House Picked -->
+  <!-- You Win -->
+  <!-- You Lose -->
+  <!-- Play Again -->
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.

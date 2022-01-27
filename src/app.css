@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(#1f3756, #141539);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+body .container .perform {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  border: 2px #606e85 solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 500px;
+  text-transform: uppercase;
+}
+body .container .perform h1 {
+  color: #fff;
+}
+body .container .perform .score {
+  justify-self: end;
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  color: #2a46c0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .perform .score p {
+  font-size: 1.2rem;
+}
+body .container .perform .score h1 {
+  color: #3b4363;
+  font-size: 3rem;
+  margin: auto;
+}
+body .container .select {
+  margin: auto;
+  width: 490px;
+  height: 472px;
+  border: 1px #fff solid;
+  border-radius: 0.5rem;
+}
+body .container .select div {
+  display: flex;
+  padding: 2rem;
+}
+body .container .select div .paper {
+  background: linear-gradient(to bottom, #4865f4, #5671f5);
+}
+body .container .select div .rock {
+  background: linear-gradient(to bottom, #dc2e4e, #dd405d);
+  justify-self: center;
+}
+body .container .select div .scissors {
+  background: linear-gradient(to bottom, #ec9e0e, #eca922);
+}
+body .container .select div .border {
+  padding: 1rem;
+  border-radius: 100%;
+  margin: 24px;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 -5px 0 0 rgba(0, 0, 0, 0.2) inset;
+}
+body .container .select div .border img {
+  box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.2) inset;
+  border-radius: 100%;
+  padding: 1.3rem;
+  background: linear-gradient(to bottom, lightgray, #fff);
+}
+body .container .select #results_box {
+  flex-wrap: nowrap;
+  width: 550px;
+  justify-content: space-between;
+}
+body .container .select #results_box #outResoult {
+  display: block;
+}
+body .container .select .box {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 40px;
+  row-gap: 40px;
+  background: url("../images/bg-triangle.svg") no-repeat center center;
+}
+body .btn {
+  background-color: transparent;
+  border: 1px #fff solid;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  font-weight: bold;
+}
+body .btn:hover {
+  background-color: #fff;
+  color: #3b4363;
+  cursor: pointer;
+}
+body .attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+body .attribution a {
+  color: grey;
+}
+
+/*# sourceMappingURL=app.css.map */
