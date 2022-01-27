@@ -32,6 +32,20 @@ btn_again.id = 'btn-again'
 btn_again.appendChild(newBtn)
 whoWin.appendChild(btn_again)
 
+const textBox1 = document.createElement('div')
+textBox1.id = 'textBox1'
+const text1 = document.createElement('h3')
+text1.textContent = 'YOU PICKED'
+textBox1.appendChild(text1)
+textBox1.classList.add('textBox')
+
+const textBox2 = document.createElement('div')
+textBox2.id = 'textBox2'
+const text2 = document.createElement('h3')
+text2.textContent = 'THE HOUSE PICKED'
+textBox2.appendChild(text2)
+textBox2.classList.add('textBox')
+
 
 nodes_select.forEach(e => {
 	e.addEventListener('click', () => {
@@ -45,6 +59,9 @@ nodes_select.forEach(e => {
 		let clone = e.cloneNode(true)
 		clone.disabled = true
 		cloneCpu.disabled = true
+
+		textBox1.appendChild(clone)
+		textBox2.appendChild(cloneCpu)
 
 		if (ownOption === computerOption) {
 			h1.textContent = 'DEAD HAT'
@@ -62,8 +79,8 @@ nodes_select.forEach(e => {
 		}
 
 		select.replaceChildren(results)
-		results.appendChild(clone)
-		results.appendChild(cloneCpu).style.order = '2'
+		results.appendChild(textBox1)
+		results.appendChild(textBox2).style.order = '2'
 
 		setTimeout(function() {
 			results.classList.toggle('wrap')

@@ -72,20 +72,17 @@ body .container .select {
     height: 350px;
   }
 }
-body .container .select div {
-  display: flex;
-}
-body .container .select div .paper {
+body .container .select .paper {
   background: linear-gradient(to bottom, #4865f4, #5671f5);
 }
-body .container .select div .rock {
+body .container .select .rock {
   background: linear-gradient(to bottom, #dc2e4e, #dd405d);
   justify-self: center;
 }
-body .container .select div .scissors {
+body .container .select .scissors {
   background: linear-gradient(to bottom, #ec9e0e, #eca922);
 }
-body .container .select div .border {
+body .container .select .border {
   padding: 1rem;
   border-radius: 100%;
   margin: 24px;
@@ -94,17 +91,18 @@ body .container .select div .border {
   box-shadow: 0 -5px 0 0 rgba(0, 0, 0, 0.2) inset;
 }
 @media (max-width: 900px) {
-  body .container .select div .border {
+  body .container .select .border {
     margin: 0;
   }
 }
-body .container .select div .border img {
+body .container .select .border img {
   box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.2) inset;
   border-radius: 100%;
   padding: 1.3rem;
   background: linear-gradient(to bottom, lightgray, #fff);
 }
 body .container .select #results_box {
+  display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
@@ -112,50 +110,6 @@ body .container .select #results_box {
 @media (max-width: 900px) {
   body .container .select #results_box {
     flex-wrap: wrap;
-  }
-}
-body .container .select #results_box .shadows-victory:before {
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  position: absolute;
-  content: "";
-  border: 20px rgba(0, 0, 0, 0.2) solid;
-}
-@media (max-width: 900px) {
-  body .container .select #results_box .shadows-victory:before {
-    border-width: 15px;
-  }
-}
-body .container .select #results_box .shadows-victory:after {
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  position: absolute;
-  content: "";
-  border: 40px rgba(0, 0, 0, 0.2) solid;
-}
-@media (max-width: 900px) {
-  body .container .select #results_box .shadows-victory:after {
-    border-width: 30px;
-  }
-}
-body .container .select #results_box .border {
-  align-items: center;
-  justify-content: center;
-  transform: scale(2.4);
-  margin: 0 7rem;
-}
-@media (max-width: 900px) {
-  body .container .select #results_box .border {
-    transform: scale(1);
-    margin: 0 1rem;
   }
 }
 body .container .select #results_box #outResoult {
@@ -192,7 +146,67 @@ body .container .select #results_box #outResoult #btn-again:hover {
   cursor: pointer;
   color: orange;
 }
+body .container .select #results_box .textBox {
+  text-align: center;
+}
+body .container .select #results_box .textBox h3 {
+  position: relative;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  body .container .select #results_box .textBox h3 {
+    font-size: 1rem;
+    top: 155px;
+  }
+}
+body .container .select #results_box .textBox .shadows-victory:before {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  content: "";
+  border: 20px rgba(0, 0, 0, 0.2) solid;
+}
+@media (max-width: 900px) {
+  body .container .select #results_box .textBox .shadows-victory:before {
+    border-width: 15px;
+  }
+}
+body .container .select #results_box .textBox .shadows-victory:after {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  content: "";
+  border: 40px rgba(0, 0, 0, 0.2) solid;
+}
+@media (max-width: 900px) {
+  body .container .select #results_box .textBox .shadows-victory:after {
+    border-width: 30px;
+  }
+}
+body .container .select #results_box .textBox .border {
+  align-items: center;
+  justify-content: center;
+  transform: scale(2.4);
+  margin: 0 7rem;
+}
+@media (max-width: 900px) {
+  body .container .select #results_box .textBox .border {
+    transform: scale(1);
+    margin: 0 1rem;
+  }
+}
 body .container .select .box {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
