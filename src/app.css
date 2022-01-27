@@ -102,6 +102,7 @@ body .container .select .border img {
   background: linear-gradient(to bottom, lightgray, #fff);
 }
 body .container .select #results_box {
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -154,6 +155,7 @@ body .container .select #results_box .textBox h3 {
   color: #fff;
   font-size: 1.5rem;
   font-weight: 600;
+  top: -145px;
 }
 @media (max-width: 900px) {
   body .container .select #results_box .textBox h3 {
@@ -248,6 +250,27 @@ body .attribution {
 }
 body .attribution a {
   color: grey;
+}
+
+.h2 {
+  order: 4;
+  width: 100px;
+}
+
+.div {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  width: 132px;
+  height: 132px;
+  margin: 0 7rem;
+  transform: scale(2.4);
+}
+@media (max-width: 900px) {
+  .div {
+    padding: 60px;
+    transform: scale(1);
+    margin: 0 1rem;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

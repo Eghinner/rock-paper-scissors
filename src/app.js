@@ -67,6 +67,27 @@ nodes_select.forEach(e => {
 		textBox1.appendChild(clone)
 		textBox2.appendChild(cloneCpu)
 
+
+		select.replaceChildren(results)
+		results.appendChild(textBox1)
+
+		const div = document.createElement('div')
+		div.classList.add('div')
+		results.appendChild(textBox2)
+		cloneCpu.replaceWith(div)
+
+		setTimeout(function() {
+			textBox2.style.order = '2'
+			div.replaceWith(cloneCpu)
+		}, 3000);
+
+
+		const h2 = document.createElement('h2')
+		h2.classList.add('h2')
+		results.appendChild(h2)
+
+
+		setTimeout(function() {
 		if (ownOption === computerOption) {
 			h1.textContent = 'DEAD HAT'
 		} else if ((ownOption === 'paper' && computerOption === 'scissors') ||
@@ -81,15 +102,10 @@ nodes_select.forEach(e => {
 			score.textContent = scoreValue
 			clone.classList.add('shadows-victory')
 		}
-
-		select.replaceChildren(results)
-		results.appendChild(textBox1)
-		results.appendChild(textBox2).style.order = '2'
-
-		setTimeout(function() {
-			results.classList.toggle('wrap')
-			results.appendChild(whoWin)
-		}, 1000);
+			// results.classList.toggle('wrap')
+			// results.appendChild(whoWin)
+			h2.replaceWith(whoWin);
+		}, 4000);
 	})
 })
 
