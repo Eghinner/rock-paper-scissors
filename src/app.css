@@ -1,4 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+@font-face {
+  font-family: "Barlow Semi";
+  src: url("./fonts/BarlowSemiCondensed-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Barlow Bold";
+  src: url("./fonts/BarlowSemiCondensed-Bold.ttf");
+  font-weight: 700;
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Barlow Semi", sans-serif;
 }
 @media (max-width: 900px) {
   body {
@@ -39,7 +48,7 @@ body .container .perform h1 {
 }
 body .container .perform .score {
   justify-self: end;
-  font-weight: bold;
+  font-family: "Barlow Bold", sans-serif;
   padding: 0.5rem 2rem;
   background-color: #fff;
   border-radius: 0.5rem;
@@ -114,6 +123,7 @@ body .container .select #results_box {
   }
 }
 body .container .select #results_box #outResoult {
+  z-index: 999999999999;
   width: 260px;
   flex-direction: column;
   text-align: center;
@@ -128,7 +138,7 @@ body .container .select #results_box #outResoult {
 body .container .select #results_box #outResoult h1 {
   margin: 1rem 0;
   color: #fff;
-  font-weight: 700;
+  font-family: "Barlow Bold", sans-serif;
   font-size: 3.7rem;
 }
 body .container .select #results_box #outResoult #btn-again {
@@ -140,7 +150,7 @@ body .container .select #results_box #outResoult #btn-again {
   font-size: 1.2rem;
   padding: 1rem 3.5rem;
   border-radius: 0.5rem;
-  font-weight: bold;
+  font-family: "Barlow Bold", sans-serif;
   z-index: 99999;
 }
 body .container .select #results_box #outResoult #btn-again:hover {
@@ -154,7 +164,6 @@ body .container .select #results_box .textBox h3 {
   position: relative;
   color: #fff;
   font-size: 1.5rem;
-  font-weight: 600;
   top: -145px;
 }
 @media (max-width: 900px) {
@@ -230,7 +239,7 @@ body .btn {
   position: absolute;
   bottom: 2.5rem;
   right: 2.5rem;
-  font-weight: bold;
+  font-family: "Barlow Bold", sans-serif;
 }
 body .btn:hover {
   background-color: #fff;

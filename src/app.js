@@ -11,7 +11,9 @@ function getRandomNode() {
 	return Math.floor(Math.random() * nodes_select.length);
 }
 
-let scoreValue = 0
+let scoreValue = localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')) : 0;
+localStorage.setItem('score', JSON.stringify(scoreValue));
+// let scoreValue = 0
 score.textContent = scoreValue
 let ownOption = ''
 let computerOption = ''
@@ -88,20 +90,22 @@ nodes_select.forEach(e => {
 
 
 		setTimeout(function() {
-		if (ownOption === computerOption) {
-			h1.textContent = 'DEAD HAT'
-		} else if ((ownOption === 'paper' && computerOption === 'scissors') ||
-			(ownOption === 'scissors' && computerOption === 'rock') ||
-			(ownOption === 'rock' && computerOption === 'paper')
-			) {
-			h1.textContent = 'YOU LOSE'
-			cloneCpu.classList.add('shadows-victory')
-		} else {
-			h1.textContent = 'YOU WIN'
-			scoreValue += 1
-			score.textContent = scoreValue
-			clone.classList.add('shadows-victory')
-		}
+			if (ownOption === computerOption) {
+				h1.textContent = 'DEAD HAT'
+			} else if ((ownOption === 'paper' && computerOption === 'scissors') ||
+				(ownOption === 'scissors' && computerOption === 'rock') ||
+				(ownOption === 'rock' && computerOption === 'paper')
+				) {
+				h1.textContent = 'YOU LOSE'
+				cloneCpu.classList.add('shadows-victory')
+			} else {
+				h1.textContent = 'YOU WIN'
+				scoreValue += 1
+				localStorage.setItem('score', JSON.stringify(scoreValue));
+
+				score.textContent = scoreValue
+				clone.classList.add('shadows-victory')
+			}
 			// results.classList.toggle('wrap')
 			// results.appendChild(whoWin)
 			h2.replaceWith(whoWin);
