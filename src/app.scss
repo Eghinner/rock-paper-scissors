@@ -336,6 +336,7 @@ body {
 }
 
 .modal {
+	z-index: 9999999999999999999999999999999999999;
     display: none;
     position: absolute;
     background: hsl(0, 0, 0, 0.5);

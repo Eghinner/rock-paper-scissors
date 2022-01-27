@@ -295,6 +295,7 @@ body .attribution a {
 }
 
 .modal {
+  z-index: 68739955140067327;
   display: none;
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
